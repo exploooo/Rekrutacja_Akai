@@ -1,0 +1,605 @@
+@font-face { 
+  font-family: pokemon;
+  src: url(pokemon/font/Hollow.ttf); /*link do fonta https://www.dafont.com/pokemon.font */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: url('https://www.gannett-cdn.com/presto/2019/12/13/PREN/056dc099-5c18-47af-a416-435f29175b70-Switch_PokemonSwordPokemonShield_artwork_01_png_jpgcopy.jpg?crop=5852,3292,x0,y227&width=1600&height=800&format=pjpg&auto=webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-size: 2em;
+  text-align: center;
+  font-family: pokemon;
+  font-size: 2.5em;
+  color: yellow;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+}
+
+label {
+  padding: 8px;
+}
+
+label span {
+  display: inline-block;
+  padding-left: 8px;
+}
+
+input {
+  padding: 4px;
+}
+
+button {
+  padding: 4px;
+}
+
+.pokemon-card{
+  padding: 1.5rem;
+  border: solid 5px gray;
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+  margin: 20px;
+  background: chocolate;
+}
+
+.img-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  border-style: inset;
+  border-width: 2px;
+  background: white;
+}
+
+.description{
+  color: white;
+  margin-top: 1em;
+}
+
+.name-filter{
+  display: inline;
+}
+
+.bug{
+  border-color: lawngreen;
+}
+
+.bug img{
+  border-color: lawngreen;
+  background: lawngreen;
+}
+
+.bug-flying{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.bug-flying img{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, lawngreen, khaki);
+}
+
+.bug-grass{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: green;
+  border-right-color: green;
+}
+
+.bug-grass img{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: green;
+  border-right-color: green;
+  background: linear-gradient(to bottom right, lawngreen, green);
+}
+
+.bug-poison{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: purple;
+  border-right-color: purple;
+}
+
+.bug-poison img{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: purple;
+  border-right-color: purple;
+  background: linear-gradient(to bottom right, lawngreen, purple);
+}
+
+.dragon{
+  border-color: orange;
+}
+
+.dragon-img{
+  border-color: orange;
+  background: orange;
+}
+
+.dragon-flying{
+  border-top-color: orange;
+  border-left-color: orange;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.dragon-flying img{
+  border-top-color: orange;
+  border-left-color: orange;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, orange, khaki);
+}
+
+.electric{
+  border-color: yellow;
+}
+
+.electric img{
+  background: yellow;
+  border-color: yellow;
+}
+
+.electric-flying{
+  border-top-color: yellow;
+  border-left-color: yellow;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.electric-flying img{
+  border-top-color: yellow;
+  border-left-color: yellow;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, yellow, khaki);
+}
+
+.bug-steal{
+  border-top-color: lawngreen;
+  border-left-color: lawngreen;
+  border-bottom-color: steelblue;
+  border-right-color: steelblue;
+}
+
+.bug-steal img{
+  border-top-color: yellow;
+  border-left-color: yellow;
+  border-bottom-color: steelblue;
+  border-right-color: steelblue;
+  background: linear-gradient(to bottom right, lawngreen, steelblue);
+}
+
+.fairy{
+  border-color: orchid;
+}
+
+.fairy img{
+  border-color: orchid;
+  background: orchid;
+}
+
+.fighting{
+  border-color: red;
+}
+
+.fighting img{
+  border-color: red;
+  background: red;
+}
+
+.fire{
+  border-color: orangered;
+}
+
+.fire img{
+  border-color: orangered;
+  background: orangered;
+}
+
+.fire-flying{
+  border-top-color: orangered;
+  border-left-color: orangered;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.fire-flying img{
+  border-top-color: orangered;
+  border-left-color: orangered;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, orangered, khaki);
+}
+
+.flying{
+  border-color: khaki;
+}
+
+.flying img{
+  border-color: khaki;
+  background: khaki;
+}
+
+.ghost-poison{
+  border-top-color: indigo;
+  border-left-color: indigo;
+  border-bottom-color: purple;
+  border-right-color: purple;
+}
+
+.ghost-poison img{
+  border-top-color: indigo;
+  border-left-color: indigo;
+  border-bottom-color: purple;
+  border-right-color: purple;
+  background: linear-gradient(to bottom right, indigo, purple);
+
+}
+
+.grass{
+  border-color: green;
+}
+
+.grass img{
+  border-color: green;
+  background: green;
+}
+
+.grass-poison{
+  border-top-color: green;
+  border-left-color: green;
+  border-bottom-color: purple;
+  border-right-color: purple;
+}
+
+.grass-poison img{
+  border-top-color: green;
+  border-left-color: green;
+  border-bottom-color: purple;
+  border-right-color: purple;
+  background: linear-gradient(to bottom right, green, purple);
+}
+
+.grass-psychic{
+  border-top-color: green;
+  border-left-color: green;
+  border-bottom-color: violet;
+  border-right-color: violet;
+}
+
+.grass-psychic img{
+  border-top-color: green;
+  border-left-color: green;
+  border-bottom-color: violet;
+  border-right-color: violet;
+  background: linear-gradient(to bottom right, green, violet);
+}
+
+
+.ground{
+  border-color: burlywood;
+}
+
+.ground img{
+  border-color: burlywood;
+  background: burlywood;
+}
+
+.ground-rock{
+  border-top-color: burlywood;
+  border-left-color: burlywood;
+  border-bottom-color: tan;
+  border-right-color: tan;
+}
+
+.ground-rock img{
+  border-top-color: burlywood;
+  border-left-color: burlywood;
+  border-bottom-color: tan;
+  border-right-color: tan;
+  background: linear-gradient(to bottom right, burlywood, tan);
+}
+
+.ice{
+  border-color: lightskyblue;
+}
+
+.ice img{
+  border-color: lightskyblue;
+  background: lightskyblue;
+}
+
+.ice-flying{
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.ice-flying img{
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, lightskyblue, khaki);
+}
+
+.ice-psychic{
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
+  border-bottom-color: violet;
+  border-right-color: violet;
+}
+
+.ice-psychic img{
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
+  border-bottom-color: violet;
+  border-right-color: violet;
+  background: linear-gradient(to bottom right, lightskyblue, violet);
+}
+
+
+.normal{
+  border-color: rosybrown;
+}
+
+.normal img{
+  border-color: rosybrown;
+  background: rosybrown;
+}
+
+.normal-fairy{
+  border-top-color: rosybrown;
+  border-left-color: rosybrown;
+  border-bottom-color: orchid;
+  border-right-color: orchid;
+}
+
+.normal-fairy img{
+  border-top-color: rosybrown;
+  border-left-color: rosybrown;
+  border-bottom-color: orchid;
+  border-right-color: orchid;
+  background: linear-gradient(to bottom right, rosybrown, orchid);
+}
+
+.normal-flying{
+  border-top-color: rosybrown;
+  border-left-color: rosybrown;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.normal-flying img{
+  border-top-color: rosybrown;
+  border-left-color: rosybrown;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, rosybrown, khaki);
+}
+
+.poison{
+  border-color: purple;
+}
+
+.poison img{
+  border-color: purple;
+  background: purple;
+}
+
+.poison-flying{
+  border-top-color: purple;
+  border-left-color: purple;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.poison-flying img{
+  border-top-color: purple;
+  border-left-color: purple;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, purple, khaki);
+}
+
+.poison-ground{
+  border-top-color: purple;
+  border-left-color: purple;
+  border-bottom-color: burlywood;
+  border-right-color: burlywood;
+}
+
+.poison-ground img{
+  border-top-color: purple;
+  border-left-color: purple;
+  border-bottom-color: burlywood;
+  border-right-color: burlywood;
+  background: linear-gradient(to bottom right, purple, burlywood);
+}
+
+.psychic{
+  border-color: violet;
+}
+
+.psychic img{
+  border-color: violet;
+  background: violet;
+}
+
+.psychic-fairy{
+  border-top-color: violet;
+  border-left-color: violet;
+  border-bottom-color: orchid;
+  border-right-color: orchid;
+}
+
+.psychic-fairy img{
+  border-top-color: violet;
+  border-left-color: violet;
+  border-bottom-color: orchid;
+  border-right-color: orchid;
+  background: linear-gradient(to bottom right, violet, orchid);
+}
+
+.rock-flying{
+  border-top-color: tan;
+  border-left-color: tan;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.rock-flying img{
+  border-top-color: tan;
+  border-left-color: tan;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, tan, khaki);
+}
+
+.rock-ground{
+  border-top-color: burlywood;
+  border-left-color: burlywood;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.rock-ground img{
+  border-top-color: burlywood;
+  border-left-color: burlywood;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, burlywood, khaki);
+}
+
+.rock-water{
+  border-top-color: tan;
+  border-left-color: tan;
+  border-bottom-color: darkblue;
+  border-right-color: darkblue;
+}
+
+.rock-water img{
+  border-top-color: tan;
+  border-left-color: tan;
+  border-bottom-color: darkblue;
+  border-right-color: darkblue;
+  background: linear-gradient(to bottom right, tan, darkblue);
+}
+
+.water{
+  border-color: darkblue;
+}
+
+.water img{
+  border-color: darkblue;
+  background: darkblue;
+}
+
+
+.water-fighting{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: red;
+  border-right-color: red;
+}
+
+.water-fighting img{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: red;
+  border-right-color: red;
+  background: linear-gradient(to bottom right, darkblue, red);
+}
+
+.water-flying{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+}
+
+.water-flying img{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: khaki;
+  border-right-color: khaki;
+  background: linear-gradient(to bottom right, darkblue, khaki);
+}
+
+.water-ice{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: lightskyblue;
+  border-right-color: lightskyblue;
+}
+
+.water-ice img{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: lightskyblue;
+  border-right-color: lightskyblue;
+  background: linear-gradient(to bottom right, darkblue, lightskyblue);
+}
+
+.water-poison{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: purple;
+  border-right-color: purple;
+}
+
+.water-poison img{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: purple;
+  border-right-color: purple;
+  background: linear-gradient(to bottom right, darkblue, purple);
+}
+
+.water-psychic{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: violet;
+  border-right-color: violet;
+}
+
+.water-psychic img{
+  border-top-color: darkblue;
+  border-left-color: darkblue;
+  border-bottom-color: violet;
+  border-right-color: violet;
+  background: linear-gradient(to bottom right, darkblue, violet);
+}
+
+.hidden{
+  display: none;
+}
